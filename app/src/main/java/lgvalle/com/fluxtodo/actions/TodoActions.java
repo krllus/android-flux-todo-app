@@ -1,8 +1,5 @@
 package lgvalle.com.fluxtodo.actions;
 
-/**
- * Created by lgvalle on 02/08/15.
- */
 public interface TodoActions {
     String TODO_CREATE = "todo-create";
     String TODO_COMPLETE = "todo-complete";

@@ -16,15 +16,13 @@ import java.util.List;
 import lgvalle.com.fluxtodo.actions.ActionsCreator;
 import lgvalle.com.fluxtodo.model.Todo;
 
-/**
- * Created by lgvalle on 28/07/15.
- */
-public class TodoRecyclerAdapter extends RecyclerView.Adapter<TodoRecyclerAdapter.ViewHolder> {
+
+class TodoRecyclerAdapter extends RecyclerView.Adapter<TodoRecyclerAdapter.ViewHolder> {
 
     private static ActionsCreator actionsCreator;
     private List<Todo> todos;
 
-    public TodoRecyclerAdapter(ActionsCreator actionsCreator) {
+    TodoRecyclerAdapter(ActionsCreator actionsCreator) {
         this.todos = new ArrayList<>();
         TodoRecyclerAdapter.actionsCreator = actionsCreator;
     }
@@ -45,25 +43,25 @@ public class TodoRecyclerAdapter extends RecyclerView.Adapter<TodoRecyclerAdapte
         return todos.size();
     }
 
-    public void setItems(List<Todo> todos) {
+    void setItems(List<Todo> todos) {
         this.todos = todos;
         notifyDataSetChanged();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView todoText;
-        public CheckBox todoCheck;
-        public Button todoDelete;
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView todoText;
+        CheckBox todoCheck;
+        Button todoDelete;
 
-        public ViewHolder(View v) {
+        ViewHolder(View v) {
             super(v);
-            todoText = (TextView) v.findViewById(R.id.row_text);
-            todoCheck = (CheckBox) v.findViewById(R.id.row_checkbox);
-            todoDelete = (Button) v.findViewById(R.id.row_delete);
+            todoText = v.findViewById(R.id.row_text);
+            todoCheck = v.findViewById(R.id.row_checkbox);
+            todoDelete = v.findViewById(R.id.row_delete);
 
         }
 
-        public void bindView(final Todo todo) {
+        void bindView(final Todo todo) {
             if (todo.isComplete()) {
                 SpannableString spanString = new SpannableString(todo.getText());
                 spanString.setSpan(new StrikethroughSpan(), 0, spanString.length(), 0);

@@ -5,9 +5,6 @@ import com.squareup.otto.Bus;
 import lgvalle.com.fluxtodo.actions.Action;
 import lgvalle.com.fluxtodo.stores.Store;
 
-/**
- * Created by lgvalle on 19/07/15.
- */
 public class Dispatcher {
     private final Bus bus;
     private static Dispatcher instance;
@@ -19,7 +16,7 @@ public class Dispatcher {
         return instance;
     }
 
-    Dispatcher(Bus bus) {
+    private Dispatcher(Bus bus) {
         this.bus = bus;
     }
 

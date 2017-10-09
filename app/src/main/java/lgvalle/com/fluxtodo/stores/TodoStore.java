@@ -12,9 +12,6 @@ import lgvalle.com.fluxtodo.actions.TodoActions;
 import lgvalle.com.fluxtodo.dispatcher.Dispatcher;
 import lgvalle.com.fluxtodo.model.Todo;
 
-/**
- * Created by lgvalle on 02/08/15.
- */
 public class TodoStore extends Store {
 
     private static TodoStore instance;
@@ -22,7 +19,7 @@ public class TodoStore extends Store {
     private Todo lastDeleted;
 
 
-    protected TodoStore(Dispatcher dispatcher) {
+    private TodoStore(Dispatcher dispatcher) {
         super(dispatcher);
         todos = new ArrayList<>();
     }
@@ -159,9 +156,7 @@ public class TodoStore extends Store {
     }
 
     private Todo getById(long id) {
-        Iterator<Todo> iter = todos.iterator();
-        while (iter.hasNext()) {
-            Todo todo = iter.next();
+        for (Todo todo : todos) {
             if (todo.getId() == id) {
                 return todo;
             }

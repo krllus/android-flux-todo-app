@@ -44,10 +44,10 @@ public class TodoActivity extends AppCompatActivity {
     }
 
     private void setupView() {
-        mainLayout = ((ViewGroup) findViewById(R.id.main_layout));
-        mainInput = (EditText) findViewById(R.id.main_input);
+        mainLayout = findViewById(R.id.main_layout);
+        mainInput = findViewById(R.id.main_input);
 
-        Button mainAdd = (Button) findViewById(R.id.main_add);
+        Button mainAdd = findViewById(R.id.main_add);
         mainAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,14 +55,14 @@ public class TodoActivity extends AppCompatActivity {
                 resetMainInput();
             }
         });
-        mainCheck = (CheckBox) findViewById(R.id.main_checkbox);
+        mainCheck = findViewById(R.id.main_checkbox);
         mainCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 checkAll();
             }
         });
-        Button mainClearCompleted = (Button) findViewById(R.id.main_clear_completed);
+        Button mainClearCompleted = findViewById(R.id.main_clear_completed);
         mainClearCompleted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,7 +72,7 @@ public class TodoActivity extends AppCompatActivity {
         });
 
 
-        RecyclerView mainList = (RecyclerView) findViewById(R.id.main_list);
+        RecyclerView mainList =  findViewById(R.id.main_list);
         mainList.setLayoutManager(new LinearLayoutManager(this));
         listAdapter = new TodoRecyclerAdapter(actionsCreator);
         mainList.setAdapter(listAdapter);

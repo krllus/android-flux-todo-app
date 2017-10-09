@@ -2,14 +2,11 @@ package lgvalle.com.fluxtodo.actions;
 
 import java.util.HashMap;
 
-/**
- * Created by lgvalle on 22/07/15.
- */
 public class Action {
     private final String type;
     private final HashMap<String, Object> data;
 
-    Action(String type, HashMap<String, Object> data) {
+    private Action(String type, HashMap<String, Object> data) {
         this.type = type;
         this.data = data;
     }

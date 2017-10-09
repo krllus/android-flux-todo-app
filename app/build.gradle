@@ -1,13 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+
 
     defaultConfig {
         applicationId "lgvalle.com.fluxtodo"
-        minSdkVersion 16
-        targetSdkVersion 22
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        renderscriptSupportModeEnabled true
         versionCode 1
         versionName "1.0"
     }
@@ -21,8 +24,17 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
+
     compile 'com.squareup:otto:1.3.8'
-    compile 'com.android.support:recyclerview-v7:22.2.0'
-    compile 'com.android.support:design:22.2.0'
+
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.supportLibraryVersion"
+}
+
+repositories {
+    maven {
+        url 'https://maven.google.com'
+        // Alternative URL is 'https://dl.google.com/dl/android/maven2/'
+    }
 }

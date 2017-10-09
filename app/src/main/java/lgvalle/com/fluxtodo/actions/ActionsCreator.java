@@ -3,15 +3,12 @@ package lgvalle.com.fluxtodo.actions;
 import lgvalle.com.fluxtodo.dispatcher.Dispatcher;
 import lgvalle.com.fluxtodo.model.Todo;
 
-/**
- * Created by lgvalle on 02/08/15.
- */
 public class ActionsCreator {
 
     private static ActionsCreator instance;
-    final Dispatcher dispatcher;
+    private final Dispatcher dispatcher;
 
-    ActionsCreator(Dispatcher dispatcher) {
+    private ActionsCreator(Dispatcher dispatcher) {
         this.dispatcher = dispatcher;
     }
 

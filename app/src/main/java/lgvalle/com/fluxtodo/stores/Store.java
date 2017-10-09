@@ -3,14 +3,11 @@ package lgvalle.com.fluxtodo.stores;
 import lgvalle.com.fluxtodo.actions.Action;
 import lgvalle.com.fluxtodo.dispatcher.Dispatcher;
 
-/**
- * Created by lgvalle on 02/08/15.
- */
 public abstract class Store {
 
-    final Dispatcher dispatcher;
+    private final Dispatcher dispatcher;
 
-    protected Store(Dispatcher dispatcher) {
+    Store(Dispatcher dispatcher) {
         this.dispatcher = dispatcher;
     }
 
@@ -19,7 +16,9 @@ public abstract class Store {
     }
 
     abstract StoreChangeEvent changeEvent();
+
     public abstract void onAction(Action action);
 
-    public interface StoreChangeEvent {}
+    public interface StoreChangeEvent {
+    }
 }
